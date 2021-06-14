@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">TikLike</string>
+
+    <!--  crop video  -->
+
+    <string name="default_time">00:00</string>
+    <string name="custom">Custom</string>
+    <string name="square">Square</string>
+    <string name="portrait">Portrait</string>
+    <string name="landscape">Landscape</string>
+    <string name="_4_3">4:3</string>
+    <string name="_16_9">16:9</string>
+
+    <!--Tik Tok-->
+    <string name="default_text">Default text</string>
+    <string name="likes">Likes</string>
+    <string name="follower">Follower</string>
+    <string name="buy_stars">Buy Stars</string>
+    <string name="orders">Orders</string>
+    <string name="guide_paste_link_like">Paste or Enter URL from Tiktok to get likes</string>
+    <string name="guide_paste_link_follow">Paste or Enter URL from Tiktok to get followers</string>
+    <string name="guide_likes">
+        Go to your profile on TikTok App
+        \n1: Click the video you want
+        \n2: Click an icon (…) below the comment icon
+        \n3: Click \"Copy Link\"</string>
+    <string name="guide_follower_line_0">Go to your profile on TikTok App</string>
+    <string name="guide_follower_line_1">1: Go to your account page by clicking an icon</string>
+    <string name="guide_follower_line_2_3_4">
+        2: Click on the menu button (…) on the upper
+        \nright corner
+        \n3: Click on Share Profile
+        \n4: Click \"Copy Link\" to copy your TikTok ID</string>
+
+    <string name="msg_order">You dont’t have any Order</string>
+
+    <string name="last_video">Your last video</string>
+    <string name="last_session">Your last sessions</string>
+
+    <string name="guile_likes_detail">Get real and active TikTok likes</string>
+    <string name="guile_followers_detail">Get real and active TikTok followers</string>
+
+    <string name="follow_detail_following">following</string>
+    <string name="follow_detail_follower">followers</string>
+    <string name="follow_detail_likes">likes</string>
+
+    <string name="_0">0</string>
+    <string name="_0_20">0/20</string>
+
+    <string name="like">Like</string>
+    <string name="follow">Follow</string>
+    <string name="skip">skip</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="msg_get_star_like">Like videos or follow others on Tiktok to get stars!</string>
+    <string name="msg_get_star_follow">Like videos or follow others on Tiktok to get stars!</string>
+
+    <string name="msg_invalid_url">Invalid URL</string>
+    <string name="content_invalid_url">Could not find the link URL address</string>
+
+    <string name="msg_not_enough">Your stars are not enough</string>
+    <string name="content_not_enough">Do you want get more star</string>
+
+    <string name="order_likes">Order Likes</string>
+    <string name="content_order_likes">Do you want to order +100 likes?</string>
+
+    <string name="order_followers">Order Followers</string>
+    <string name="content_order_follow">Do you want to order +100 followers?</string>
+
+    <string name="msg_successfully">Successfully</string>
+    <string name="content_successfully">Order + 500 Followers Success. We will try to complete your likes as soon as possible.</string>
+    <string name="loading_dot">loading...</string>
+    <string name="tik_tok">TikTok</string>
+    <string name="line">.............................</string>
+    <string name="msg_buy_star">How mannt more stars</string>
+    <string name="content_buy_star">Would you like to get?</string>
+    <string name="all_video">All Video</string>
+    <string name="all_user">All User</string>
+    <string name="msg_edit_video_no_video">You haven\'t created any video yet</string>
+    <string name="msg_edit_video_choose_item">Choose a video or download a video to edit and make it impressive</string>
+    <string name="edit_video_main">EditVideoMain</string>
+    <string name="speed">Speed</string>
+    <string name="cut">Cut</string>
+    <string name="crop">Crop</string>
+    <string name="gallery">Gallery</string>
+    <string name="edit">Edit</string>
+    <string name="cut_out">Cut out</string>
+    <string name="trim">Trim</string>
+    <string name="trim_cut_out">Trim - Cut out</string>
+    <string name="drag_to_select_clip">Drag to select clip</string>
+    <string name="drag_to_select_any_part_of_the_video">Drag to select any part of the video</string>
+
+    <string name="reset">Reset</string>
+    <string name="_0.5">0.5x</string>
+    <string name="_1x">1x</string>
+    <string name="_2x">2x</string>
+    <string name="_3x">3x</string>
+    <string name="_4x">4x</string>
+    <string name="msg_loading">Please don\'t close TikStar or \n input it in the background</string>
+    <string name="msg_save_successfully">Saved video to device!</string>
+    <string name="msg_back_again">Please click BACK again to exit</string>
+    <string name="msg_cancel">Cancel editing</string>
+    <string name="content_cancel">If you go back now, you will lose the \ncustomization you are changing</string>
+    <string name="keep_editing">Keep editing</string>
+    <string name="discard">Discard</string>
+
+
+</resources>

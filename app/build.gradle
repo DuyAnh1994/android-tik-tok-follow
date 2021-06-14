@@ -1,0 +1,146 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.solar.dev.tiktok.app"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+
+        cmake {
+
+            path "cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
+    buildFeatures{
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+
+    kapt {
+        generateStubs = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // MyBaseLibrary
+    implementation project(path: ':MyBaseLibrary')
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // RecycleView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    // Material
+    implementation "com.google.android.material:material:1.3.0-alpha03"
+
+    // Swipe refresh layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+
+    // FFmpeg-Android
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.3.1.LTS'
+
+    implementation 'com.dinuscxj:circleprogressbar:1.3.0'
+
+    // Exo player
+//    implementation 'com.google.android.exoplayer:exoplayer:2.11.0'
+    api "com.google.android.exoplayer:exoplayer-ui:2.8.0"
+    api "com.google.android.exoplayer:exoplayer-core:2.8.0"
+
+    // Dimen
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    // preference
+    implementation "androidx.preference:preference:1.1.1"
+
+    // Jsoup
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    // Circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // logging http
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    // loading
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // Room components
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+    androidTestImplementation "androidx.room:room-testing:2.2.5"
+
+    // gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    // pull to refresh
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+}

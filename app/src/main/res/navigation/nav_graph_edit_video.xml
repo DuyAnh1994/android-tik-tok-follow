@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_edit_video"
+    app:startDestination="@id/editVideoMainFragment">
+
+    <activity
+        android:id="@+id/editVideoTikTok"
+        android:name="com.solar.dev.tiktok.app.ui.video.common.EditVideoActivity"
+        android:label="@string/tik_tok"
+        tools:layout="@layout/activity_edit_video" />
+
+    <fragment
+        android:id="@+id/editVideoMainFragment"
+        android:label="@string/edit_video_main"
+        tools:layout="@layout/activity_edit_video">
+        <action
+            android:id="@+id/action_editVideoMainFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+        <action
+            android:id="@+id/action_editVideoMainFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment"
+            app:enterAnim="@anim/enter_fade_in"
+            app:exitAnim="@anim/exit_fade_out"
+            app:popEnterAnim="@anim/enter_fade_in"
+            app:popExitAnim="@anim/exit_fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:label="@string/gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:label="@string/edit_video_main"
+        tools:layout="@layout/activity_preview">
+        <action
+            android:id="@+id/action_previewFragment_to_cutFragment"
+            app:destination="@id/cutFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+        <action
+            android:id="@+id/action_previewFragment_to_speedFragment"
+            app:destination="@id/speedFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+        <action
+            android:id="@+id/action_previewFragment_to_cropFragment"
+            app:destination="@id/cropFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cutFragment"
+        android:label="@string/cut"
+        tools:layout="@layout/activity_cut" />
+
+    <fragment
+        android:id="@+id/speedFragment"
+        android:label="@string/speed"
+        tools:layout="@layout/activity_speed" />
+
+    <fragment
+        android:id="@+id/cropFragment"
+        android:label="@string/crop"
+        tools:layout="@layout/activity_crop" />
+
+</navigation>

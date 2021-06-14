@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.video.crop.CropListener.DataBindingListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok"
+        android:clickable="true"
+        android:clipChildren="false"
+        android:focusable="true">
+
+        <com.solar.dev.tiktok.app.ui.customview.cropvideo.cropview.window.CropVideoView
+            android:id="@+id/cropVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_10sdp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toTopOf="@+id/relativeControl"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/relativeControl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/colorBgTikTok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6">
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:textColor="@color/colorWhile_100"
+                android:textSize="@dimen/_12ssp"
+                tools:text="00:00" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ibPlay"
+                deBounceClick="@{()->bindingListener.onClickPlay(ibPlay)}"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custom_action_app_highlight_click_circle"
+                android:src="@drawable/bt_play" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRatio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/confirmBar"
+            app:layout_constraintTop_toBottomOf="@+id/relativeControl" />
+
+        <com.solar.dev.tiktok.app.ui.customview.ConfirmBar
+            android:id="@+id/confirmBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

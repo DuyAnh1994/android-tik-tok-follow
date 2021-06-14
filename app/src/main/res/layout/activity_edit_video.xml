@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.video.common.EditVideoActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok">
+
+        <!-- <fragment
+             android:id="@+id/nav_host_fragment"
+             android:name="androidx.navigation.fragment.NavHostFragment"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             app:defaultNavHost="true"
+             app:navGraph="@navigation/nav_graph_edit_video" />-->
+
+        <com.solar.dev.tiktok.app.ui.customview.AppBarEditVideo
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/msg_edit_video_choose_item"
+            android:textColor="@color/colorWhile_80"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/msg_edit_video_no_video"
+            android:textColor="@color/colorWhile_54"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVideo"
+            tools:itemCount="22"
+            tools:listitem="@layout/item_video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent"
+            app:spanCount="4" />
+
+        <FrameLayout
+            android:id="@+id/frameContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorButtonMain">#212121</color>
+    <color name="colorToolbar">#171717</color>
+    <color name="colorBackground_like">#000000</color>
+    <color name="colorBorderRatio">#FDAD2C</color>
+    <color name="colorImageDefault">#B3F6F6F6</color>
+    <color name="colorEditUrl">#212121</color>
+    <color name="colorLine">#CFCFCF</color>
+    <color name="colorButtonCancel">#F1F1F1</color>
+    <color name="colorTextItemRequestLike">#FF2459</color>
+    <color name="colorTextItemRequestFollower">#00DEDE</color>
+    <color name="colorYellow">#FFEB3B</color>
+<!--    <color name="colorBgLoading">#09111F</color>-->
+    <color name="colorTextSkip">#828282</color>
+    <color name="colorOutSize">#B3000000</color>
+    <color name="colorLikeSuccess">#FF2459</color>
+    <color name="colorFollowerSuccess">#00DEDE</color>
+    <color name="colorDefault">#00FFFFFF</color>
+    <color name="colorBadge">#FF2459</color>
+    <color name="colorMsgChooseVideo">#4F4F4F</color>
+
+
+    <!--crop video-->
+    <color name="white_translucent">#AAFFFFFF</color>
+    <color name="black_translucent">#B0000000</color>
+
+    <color name="border">@color/white_translucent</color>
+    <color name="guideline">@color/white_translucent</color>
+    <color name="corner">@android:color/white</color>
+    <color name="surrounding_area">@color/black_translucent</color>
+    <color name="lighter_gray">#eeeeee</color>
+    <color name="txt_color">#3b3b3b</color>
+
+    <!--App-->
+    <color name="colorLoading">#B3151515</color>
+    <color name="colorPressed">#338A8A8A</color>
+    <color name="colorBgTikTok">#101010</color>
+    <color name="colorBgEditText">#212121</color>
+    <color name="colorWhile_100">#FFFFFF</color>
+    <color name="colorWhile_80">#CCFFFFFF</color>
+    <color name="colorWhile_54">#8AFFFFFF</color>
+    <color name="colorWhile_20">#33FFFFFF</color>
+    <color name="colorHint">#606060</color>
+    <color name="colorBlack_100">#000000</color>
+    <color name="colorBlack_10">#1A000000</color>
+    <color name="colorBlack_40">#66000000</color>
+    <color name="colorOrange">#F5612E</color>
+    <color name="colorPlayControl">#80201D1C</color>
+    <color name="colorBgLoading">#101010</color>
+    <color name="colorRed">#E00000</color>
+
+
+
+
+    <!--Tik tok-->
+    <color name="colorBgNavigationBottom">#101010</color>
+    <color name="colorTextStar">#FDAD2C</color>
+    <color name="colorTextGuidelinePaste">#F1F1F1</color>
+    <color name="colorBgGuileLikeDetail">#000000</color>
+    <color name="colorTextYellow">#FDAD2C</color>
+    <color name="colorTextPurple">#A766E8</color>
+    <color name="colorBgItemOrder">#CC131313</color>
+    <color name="colorTextPrice">#E6E7E7E7</color>
+    <color name="colorBgItemBuyStar">#E6000000</color>
+
+
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.dialog.CancelDialog" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/_12sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/msg_cancel"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/content_cancel"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorBlack_10"
+                app:layout_constraintBottom_toTopOf="@+id/ll_footer" />
+
+            <LinearLayout
+                android:id="@+id/ll_footer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_44sdp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btDiscard"
+                    deBounceClick="@{()->bindingListener.onClickDiscard(btDiscard)}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button_left_dialog_not_enough"
+                    android:stateListAnimator="@xml/normal_button_trans"
+                    android:text="@string/discard"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:background="@color/colorBlack_10"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btKeep"
+                    deBounceClick="@{()->bindingListener.onClickKeep(btKeep)}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button_right_dialog_not_enough"
+                    android:stateListAnimator="@xml/normal_button_trans"
+                    android:text="@string/keep_editing"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlack_40"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

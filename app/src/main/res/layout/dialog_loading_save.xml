@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.solar.dev.tiktok.app.ui.dialog.SaveDialog" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgLoading"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/ibCancel"
+            deBounceClick="@{()->listener.onClickCancel(ibCancel)}"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="start"
+            android:background="@drawable/custom_action_app_highlight_click_rectangle"
+            android:scaleType="centerInside"
+            android:src="@drawable/bt_close" />
+
+        <ImageView
+            android:id="@+id/ivGifView"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/gif_loading" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivGifView"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/msg_loading"
+            android:textColor="@color/colorWhile_100"
+            android:textSize="@dimen/_16ssp" />
+
+    </RelativeLayout>
+</layout>

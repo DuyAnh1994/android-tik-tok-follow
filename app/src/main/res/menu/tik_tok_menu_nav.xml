@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/likeContainerFragment"
+        android:icon="@drawable/ic_menu_tik_tok_like"
+        android:title="@string/likes"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/followContainerFragment"
+        android:icon="@drawable/ic_menu_tik_tok_follow"
+        android:title="@string/follower"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/buyStarContainerFragment"
+        android:icon="@drawable/ic_menu_tik_tok_buy_star"
+        android:title="@string/buy_stars"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/orderContainerFragment"
+        android:icon="@drawable/ic_nav_order_disable"
+        android:title="@string/orders"
+        app:showAsAction="ifRoom" />
+</menu>

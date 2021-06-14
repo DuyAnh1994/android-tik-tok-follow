@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.solar.dev.tiktok.app.model.app.Request" />
+
+        <variable
+            name="itemListener"
+            type="com.solar.dev.tiktok.app.ui.callback.ItemListener.RequestListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorBgTikTok"
+        android:padding="@dimen/_5sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvItem"
+            deBounceClick="@{()->itemListener.onClickItem(cvItem, item)}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    loadBackground="@{item.background}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tool:background="@drawable/bg_request_like" />
+
+                <TextView
+                    android:id="@+id/tvIncrease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvType"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@{'+' + String.valueOf(item.order)}"
+                    android:textColor="@color/colorWhile_100"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvType"
+                    app:layout_constraintEnd_toEndOf="@id/tvType"
+                    app:layout_constraintStart_toStartOf="@id/tvType"
+                    tool:text="+10" />
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@{item.name}"
+                    android:textColor="@color/colorWhile_100"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tool:text="Likes" />
+
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_star_white"
+                    app:layout_constraintBottom_toBottomOf="@id/tvStars"
+                    app:layout_constraintEnd_toStartOf="@id/tvStars"
+                    app:layout_constraintTop_toTopOf="@+id/tvStars" />
+
+                <TextView
+                    android:id="@+id/tvStars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:text="@{String.valueOf(item.amount)}"
+                    android:textColor="@color/colorWhile_100"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tool:text="20" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            loadBackground="@{item.title}"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:src="@drawable/ic_like_title_request" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_tik_tok"
+    app:startDestination="@id/likeContainerFragment">
+
+    <activity
+        android:id="@+id/tikTokActivity"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.common.TikTokActivity"
+        android:label="@string/tik_tok"
+        tools:layout="@layout/activity_tik_tok" />
+
+    <keep_state_fragment
+        android:id="@+id/likeContainerFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.like.LikeContainerFragment"
+        android:label="@string/likes"
+        tools:layout="@layout/fragment_like_container" />
+
+    <keep_state_fragment
+        android:id="@+id/followContainerFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.follow.FollowContainerFragment"
+        android:label="@string/follower"
+        tools:layout="@layout/fragment_follow_container" />
+
+    <keep_state_fragment
+        android:id="@+id/buyStarContainerFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.buystar.BuyStarContainerFragment"
+        android:label="@string/buy_stars"
+        tools:layout="@layout/fragment_buy_stars_container" />
+
+    <keep_state_fragment
+        android:id="@+id/orderContainerFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.order.OrderContainerFragment"
+        android:label="@string/orders"
+        tools:layout="@layout/fragment_order_container" />
+
+
+</navigation>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.solar.dev.tiktok.app.model.app.Gallery" />
+
+        <variable
+            name="itemListener"
+            type="com.solar.dev.tiktok.app.ui.callback.ItemListener.GalleryListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvGallery"
+        deBounceClick="@{()->itemListener.onClickItem(cvGallery, item)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBgTikTok"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/ivCover"
+                ivLoadImageByUri="@{item.uriFirstVideo}"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/default_photo"
+                android:scaleType="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@{item.name}"
+                android:textColor="@color/colorWhile_54"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivCover"
+                app:layout_constraintStart_toEndOf="@id/ivCover"
+                app:layout_constraintTop_toTopOf="@id/ivCover"
+                tools:text="My collage" />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`(`+ item.count + `)`}"
+                android:textColor="@color/colorWhile_54"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivCover"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivCover"
+                tools:text="(17)" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

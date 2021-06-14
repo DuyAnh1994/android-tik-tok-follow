@@ -1,0 +1,3 @@
+include ':MyBaseLibrary'
+include ':app'
+rootProject.name = "TikFollowers"

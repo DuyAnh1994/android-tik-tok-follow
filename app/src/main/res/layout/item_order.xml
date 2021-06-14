@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.solar.dev.tiktok.app.model.api.response.OrderStatus" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/custom_item_order"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/ivCover"
+            ivLoadImageByUrl="@{item.thumbnail}"
+            ivLoadImageType="@{item.type}"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_100sdp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@{item.name}"
+            android:textColor="@color/colorHint"
+            app:layout_constraintBottom_toBottomOf="@id/ivCover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivCover"
+            app:layout_constraintTop_toTopOf="@id/ivCover"
+            tools:text="@string/default_text" />
+
+        <TextView
+            android:id="@+id/tvProgressOrder"
+            tvLoadImageByResFollow="@{item.cover}"
+            tvLoadImageByResLike="@{item.cover}"
+            tvLoadImageType="@{item.type}"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:gravity="center_vertical"
+            android:text="@{String.valueOf(item.delivered) + `/` + String.valueOf(item.count)}"
+            android:textColor="@color/colorWhile_100"
+            app:layout_constraintBottom_toBottomOf="@id/ivCover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivCover"
+            tools:drawableEndCompat="@drawable/ic_like_small"
+            tools:text="@string/_0_20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

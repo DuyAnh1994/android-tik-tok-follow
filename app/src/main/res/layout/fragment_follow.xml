@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.tiktok.follow.prepare.FollowListener.DataBindingListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.solar.dev.tiktok.app.ui.customview.AppBarTikTok
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/guide_paste_link_follow"
+            android:textColor="@color/colorTextGuidelinePaste"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <com.solar.dev.tiktok.app.ui.customview.EditTextTikTok
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
+
+        <ImageButton
+            android:id="@+id/ibConfirm"
+            deBounceClick="@{()->bindingListener.onClickConfirm(ibConfirm)}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:background="?attr/selectableItemBackground"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_confirm_disable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/tvGuide_line_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/guide_follower_line_0"
+            android:textColor="@color/colorHint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ibConfirm"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/tvGuide_line_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:text="@string/guide_follower_line_1"
+            android:textColor="@color/colorHint"
+            app:drawableEndCompat="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="@id/tvGuide_line_0"
+            app:layout_constraintTop_toBottomOf="@id/tvGuide_line_0" />
+
+        <TextView
+            android:id="@+id/tvGuide_line_2_3_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:inputType="textMultiLine"
+            android:text="@string/guide_follower_line_2_3_4"
+            android:textColor="@color/colorHint"
+            app:layout_constraintStart_toStartOf="@id/tvGuide_line_1"
+            app:layout_constraintTop_toBottomOf="@id/tvGuide_line_1" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="tvGuide_line_0, tvGuide_line_1, tvGuide_line_2_3_4" />
+
+        <TextView
+            android:id="@+id/tvGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/last_session"
+            android:textColor="@color/colorHint"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ibConfirm"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOrderRecent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/ibLoadMore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ibConfirm"
+            tool:itemCount="3"
+            tool:listitem="@layout/item_order_recent_user" />
+
+        <ImageButton
+            android:id="@+id/ibLoadMore"
+            deBounceClick="@{()->bindingListener.onClickSeeMore(ibLoadMore)}"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginBottom="@dimen/_22sdp"
+            android:background="@drawable/custom_action_app_highlight_click_rectangle"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/txt_see_more_yellow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

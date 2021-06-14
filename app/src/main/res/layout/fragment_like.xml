@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.tiktok.like.prepare.LikeListener.DataBindingListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.solar.dev.tiktok.app.ui.customview.AppBarTikTok
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/guide_paste_link_like"
+            android:textColor="@color/colorTextGuidelinePaste"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <com.solar.dev.tiktok.app.ui.customview.EditTextTikTok
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
+
+        <ImageButton
+            android:id="@+id/ibConfirm"
+            deBounceClick="@{()->bindingListener.onClickConfirm(ibConfirm)}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:background="?attr/selectableItemBackground"
+            android:elevation="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_confirm_disable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/tvGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/guide_likes"
+            android:textColor="@color/colorHint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ibConfirm"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOrderRecent"
+            rvSetFixSize="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/ibLoadMore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ibConfirm"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_order_recent_video" />
+
+        <ImageButton
+            android:id="@+id/ibLoadMore"
+            deBounceClick="@{()->bindingListener.onClickSeeMore(ibLoadMore)}"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginBottom="@dimen/_22sdp"
+            android:background="@drawable/custom_action_app_highlight_click_rectangle"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/txt_see_more_orange"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_72sdp"
+        android:background="@drawable/custom_profile_user">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civCover"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:src="@drawable/default_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civCover"
+            app:layout_constraintTop_toTopOf="@+id/civCover">
+
+            <TextView
+                android:id="@+id/tvFollowing"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="@string/_0"
+                android:textColor="@color/colorWhile_100" />
+
+            <TextView
+                android:id="@+id/tvFollowers"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="@string/_0"
+                android:textColor="@color/colorWhile_100" />
+
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="@string/_0"
+                android:textColor="@color/colorWhile_100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llTop"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civCover"
+            app:layout_constraintTop_toBottomOf="@+id/llTop">
+
+            <TextView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/follow_detail_following"
+                android:textColor="@color/colorHint" />
+
+            <TextView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/follow_detail_follower"
+                android:textColor="@color/colorHint" />
+
+            <TextView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/follow_detail_likes"
+                android:textColor="@color/colorHint" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

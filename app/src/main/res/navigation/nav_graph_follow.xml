@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_follow"
+    app:startDestination="@id/followFragment">
+
+    <fragment
+        android:id="@+id/followFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.follow.prepare.FollowFragment"
+        tools:layout="@layout/fragment_follow">
+
+        <action
+            android:id="@+id/action_followFragment_to_followDetailFragment"
+            app:destination="@id/followDetailFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+        <action
+            android:id="@+id/action_followFragment_to_followRecentFragment"
+            app:destination="@id/followRecentFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/followDetailFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.follow.detail.FollowDetailFragment"
+        tools:layout="@layout/fragment_follow_detail" />
+
+    <fragment
+        android:id="@+id/followRecentFragment"
+        android:name="com.solar.dev.tiktok.app.ui.tiktok.follow.recent.FollowRecentFragment"
+        tools:layout="@layout/fragment_follow_recent">
+
+        <action
+            android:id="@+id/action_followRecentFragment_to_followDetailFragment"
+            app:destination="@id/followDetailFragment"
+            app:enterAnim="@anim/enter_slide_left_to_right"
+            app:exitAnim="@anim/enter_slide_right_to_left"
+            app:popEnterAnim="@anim/exit_slide_right_to_left"
+            app:popExitAnim="@anim/exit_slide_left_to_right" />
+    </fragment>
+
+</navigation>

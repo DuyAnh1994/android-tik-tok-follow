@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bindingListener"
+            type="com.solar.dev.tiktok.app.ui.video.preview.EditVideoPreviewListener.DataBindingListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok">
+
+        <com.solar.dev.tiktok.app.ui.customview.AppBarPreview
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clickable="false"
+            android:focusable="false"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:use_controller="false" />
+
+        <RelativeLayout
+            android:id="@+id/relativeControl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/colorBgTikTok"
+            app:layout_constraintTop_toBottomOf="@id/playerView">
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:textColor="@color/colorWhile_100"
+                android:textSize="@dimen/_12ssp"
+                tools:text="00:00" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ibPlay"
+                deBounceClick="@{()->bindingListener.onClickPlay(ibPlay)}"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custom_action_app_highlight_click_circle"
+                android:src="@drawable/bt_play" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvSeekBar"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:background="@drawable/bg_seek_bar"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textColor="@color/colorTextYellow"
+            app:layout_constraintBottom_toTopOf="@+id/videoCutBar"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="00:00" />
+
+        <com.solar.dev.tiktok.app.ui.customview.VideoCutBar
+            android:id="@+id/videoCutBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/relativeOption"
+            app:layout_constraintTop_toBottomOf="@id/relativeControl"
+
+            app:vcb_indicator_color="@color/colorWhile_100"
+            app:vcb_indicator_format="mm:ss"
+            app:vcb_indicator_position="bottom"
+
+            app:vcb_number_image_padding_horizontal="0dp"
+            app:vcb_number_image_padding_vertical="0dp"
+            app:vcb_number_image_preview="8"
+            app:vcb_progress_center="30"
+            app:vcb_progress_max="40"
+            app:vcb_progress_min="20"
+
+            app:vcb_progress_overlay_mode="both"
+            app:vcb_progress_thumb_color="@color/colorYellow"
+            app:vcb_progress_thumb_height="@dimen/_60sdp"
+            app:vcb_progress_thumb_spread_color="@color/colorYellow"
+            app:vcb_progress_thumb_width="1dp"
+            app:vcb_show_thumb_cut="false"
+            app:vcb_thumb_cut_min_progress="1000"
+
+            app:vcb_thumb_height="@dimen/_60sdp"
+            app:vcb_thumb_overlay_tail_color="@color/colorOutSize"
+            app:vcb_thumb_overlay_tail_inside_color="#0000"
+            app:vcb_thumb_touch_extra_area="10dp"
+
+            app:vcb_video_bar_background_color="#fff"
+            app:vcb_video_bar_height="@dimen/_48sdp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeOption"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/custom_button_navigation_video"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/ibTrim"
+                deBounceClick="@{()->bindingListener.onClickTrim(ibTrim)}"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="82dp"
+                android:layout_toStartOf="@+id/ibSpeed"
+                android:background="@drawable/custom_action_app_highlight_click_circle"
+                android:scaleType="centerInside"
+                android:src="@drawable/bt_trim" />
+
+            <ImageButton
+                android:id="@+id/ibSpeed"
+                deBounceClick="@{()->bindingListener.onClickSpeed(ibSpeed)}"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custom_action_app_highlight_click_circle"
+                android:scaleType="centerInside"
+                android:src="@drawable/bt_speed" />
+
+            <ImageButton
+                android:id="@+id/ibCrop"
+                deBounceClick="@{()->bindingListener.onClickCrop(ibCrop)}"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="82dp"
+                android:layout_toEndOf="@id/ibSpeed"
+                android:background="@drawable/custom_action_app_highlight_click_circle"
+                android:scaleType="centerInside"
+                android:src="@drawable/bt_crop" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

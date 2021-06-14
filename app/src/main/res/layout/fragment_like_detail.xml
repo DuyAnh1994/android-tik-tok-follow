@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgTikTok"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.solar.dev.tiktok.app.ui.customview.AppBarTikTok
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="@dimen/_115sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+        <TextView
+            android:id="@+id/tvCountLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/colorWhile_100"
+            app:drawableStartCompat="@drawable/ic_like_small"
+            app:layout_constraintEnd_toEndOf="@id/ivThumbnail"
+            app:layout_constraintStart_toStartOf="@+id/ivThumbnail"
+            app:layout_constraintTop_toBottomOf="@id/ivThumbnail"
+            tools:text="6 Likes" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/colorBgGuileLikeDetail"
+            android:gravity="center"
+            android:text="@string/guile_likes_detail"
+            android:textColor="@color/colorWhile_100"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountLike" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRequestLike"
+            rvSetFixSize="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layoutAnimation="@anim/layout_animation"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMessage"
+            app:spanCount="3"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_request" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
